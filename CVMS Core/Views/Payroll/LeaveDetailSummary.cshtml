@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewData["Title"] = "LeaveDetailSummary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>LeaveDetailSummary</h1>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Leave Request Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/example-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/demo-styles.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="modal fade" id="imgPreviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content master-popup-content">
+                <div class="modal-header master-popup-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Image Preview</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body master-popup-body">
+                    <img src="https://st2.depositphotos.com/1002277/12135/i/950/depositphotos_121357882-stock-photo-word-demo-on-wood-planks.jpg" class="img-fluid">
+                </div>
+                <div class="modal-footer master-popup-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary"><i class="fa fa-download mr-1"></i>Download Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="master-toggle" tabindex="-1" role="dialog" aria-labelledby="masterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content master-popup-content">
+                <div class="modal-header master-popup-header">
+                    <h5 class="modal-title" id="masterModalLabel">Infra Image 1</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body master-popup-body">
+                    <form action="" class="popup-form">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="images/cab.jpg" class="img-fluid">
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group text-right mb-0 mt-2">
+                              <button type="button" class="btn btn-info btnGrey add-more">Save</button>
+                              <button type="button" class="btn btn-danger btnGrey" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav id="navbar-top" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Payroll Module</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/AdminHomePage">Back to Service</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="https://localhost:7044/Payroll/payrollHome">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/AboutUs">AboutUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/ContactUs">ContactUs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/payrollHome">Log Out</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+    <div class="wraper-main-detail">
+        <div class="container-fluid">
+            <div class="row page-heading-row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1 class="page-heading">Leave Request Details</h1>
+                </div>
+            </div>
+
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    @* <div class="search-strip">
+                    <ul class="search-box d-flex">
+                    <li class="flex-grow-1"><input type="text" placeholder="Search.." id="search" class="form-control"></li>
+                    <li><button type="button" class="btn btnGrey"><i class="fa fa-search" aria-hidden="true"></i></button></li>
+                    </ul>
+                    <button type="button" class="btn btn-add-master btnGrey" onclick="pageRedirect()">+ Add</button>
+                    </div> *@
+                    <div class="table-responsive">
+                        <table id="usertbl" class="table table-sm table-hover master-table table-bordered">
+                            <thead class="table-light-head">
+                                <tr>
+                                    <th scope="col" width="70px">Sl no.</th>
+                                    <th scope="col">Employee Name</th>
+                                    <th scope="col">Employee ID</th>
+                                    <th scope="col">leave Type</th>
+                                    <th scope="col">Leave Duration</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">End Date</th>
+                                    <th scope="col">Reason</th>
+                                    
+                                    <th scope="col" width="140px">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mtable">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
+<script src="\content\js\payroll\getleavedetailscript.js"></script>
+

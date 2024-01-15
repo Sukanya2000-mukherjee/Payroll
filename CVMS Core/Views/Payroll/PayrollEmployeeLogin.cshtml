@@ -1,0 +1,151 @@
+﻿@model CVMSCore.BAL.Models.Payroll.EmployeeLoginViewModel
+
+@{
+    ViewData["Title"] = "PayrollEmployeeLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            /* height: 100vh; */
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        /* .signup-link {
+            margin-top: 16px;
+            text-align: center;
+        }
+
+            .signup-link a {
+                color: #4caf50;
+                text-decoration: none;
+            }
+
+                .signup-link a:hover {
+                    text-decoration: underline;
+                }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+            .forgot-password a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+                .forgot-password a:hover {
+                    text-decoration: underline;
+                } */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h2>Employee Login Form</h2>
+        </header>
+
+        
+        @* @using (Html.BeginForm("PayrollEmployeeLogin", "Payroll", FormMethod.Post, new { id = "loginForm" }))
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.Username)
+                @Html.TextBoxFor(model => model.Username, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(model => model.Username)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password)
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block">Login</button>
+
+            <div class="signup-link">
+                Don't have an account? <a href="#" class="text-success">Sign Up</a>
+            </div>
+
+            <div class="forgot-password">
+                <a href="#" onclick="forgotPassword()">Forgot Password?</a>
+            </div>
+        } *@
+
+        @using (Html.BeginForm("EmployeeLoginPage", "Payroll", FormMethod.Post, new { id = "loginForm" }))
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => model.Username)
+                @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Username)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password)
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <button type="submit" id="login-btn" class="btn btn-success btn-block">Login</button>
+            <div>@ViewBag.ReturnMessage</div>
+        }
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function login() {
+            // Add your login logic here
+            alert('Login button clicked!');
+        }
+
+        function forgotPassword() {
+            // Add your forgot password logic here
+            alert('Forgot Password link clicked!');
+        }
+    </script>
+
+</body>
+</html>

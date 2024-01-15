@@ -1,0 +1,153 @@
+﻿@{
+    ViewData["Title"] = "EmployeeLeavePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Leave Page</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar-top" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Payroll Module</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li>
+                    <a class="nav-link " href="https://localhost:7044/Payroll/EmployeeHomePage">Back to Service</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="https://localhost:7044/Payroll/payrollHome">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/AboutUs">AboutUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/ContactUs">ContactUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/payrollHome">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Employee Leave Request Page</h1>
+        </header>
+
+        <section>
+            <form action="#" method="post" id="leaveRequestForm">
+
+                <div class="form-group">
+                    <label for="employeeName">Employee Name:</label>
+                    <input type="text" class="form-control" id="employeeName" name="employeeName" required>
+                </div><div id="errorempname"></div>
+
+                <div class="form-group">
+                    <label for="employeeId">Employee ID:</label>
+                    <input type="text" class="form-control" id="employeeId" name="employeeId" required>
+                </div><div id="errorempid"></div>
+
+                <div class="form-group">
+                    <label for="leaveType">Leave Type:</label>
+                    <select class="form-control" id="leaveType" name="leaveType" required>
+                        <option value="" disabled selected>Select Leave Type</option>
+                        <option value="Annual Leave">Annual Leave</option>
+                        <option value="Sick Leave">Sick Leave</option>
+                        <option value="Unpaid Leave">Unpaid Leave</option>
+                    </select>
+                </div><div id="errorleavetype"></div>
+
+                <div class="form-group" id="leavedurationselector">
+                    <label>Leave Duration:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" required name="leaveDuration" id="singleDay" value="single" >
+                        <label class="form-check-label" for="singleDay">Single Day</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" required name="leaveDuration" id="multipleDays" value="multiple">
+                        <label class="form-check-label" for="multipleDays">Multiple Days</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" required name="leaveDuration" id="halfDay" value="half">
+                        <label class="form-check-label" for="halfDay">Half Day</label>
+                    </div>
+                </div><div id="errorleave"></div>
+
+                <div class="form-group">
+                    <label for="leaveStartDate">Start Date:</label>
+                    <input type="date" class="form-control" id="leaveStartDate" name="leaveStartDate" required>
+                </div><div id="errorstartdays"></div>
+
+                <div class="form-group">
+                    <label for="leaveEndDate">End Date:</label>
+                    <input type="date" class="form-control" id="leaveEndDate" name="leaveEndDate" required>
+                </div><div id="errorenddate"></div>
+                
+
+                <div class="form-group">
+                    <label for="reason">Reason:</label>
+                    <textarea class="form-control" id="reason" name="reason" rows="4" required></textarea>
+                </div><div id="errorreason"></div>
+
+               
+
+                <button type="submit" id="btnsave" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script src="~/content/js/payroll/employeeleavescript.js"></script>

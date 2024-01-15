@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Home Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #3498db;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            position: relative;
+        }
+
+        #hero-section {
+            position: relative;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+
+            .button-container button {
+                margin: 10px;
+            }
+
+        .card-title {
+            font-size: 30px;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        header {
+            background-color: #00ffcc;
+            text-align: center;
+            font-size: 25px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+
+           /*  header a {
+                color: #000;
+                text-decoration: none;
+                font-size: 20px;
+                margin: 0 20px;
+            } */
+
+        
+            header h2 {
+                margin: 0; /* Remove default margin for h2 */
+                font-weight: bold;
+            }
+
+            header div {
+                display: flex;
+                align-items: center;
+            }
+
+            header a {
+                text-decoration: none;
+                color: #333; /* Add your desired text color */
+                margin: 0 10px; /* Add space between links */
+            }
+
+                header a.active {
+                    font-weight: bold; /* Style for active link */
+                }
+
+        footer {
+            background-color: #003366;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 98%;
+            font-size: 25px;
+            color: white;
+            justify-content: space-between;
+        }
+    </style>
+</head> 
+<body>
+
+    <header>
+       <h2>Payroll Module</h2>
+        <div>
+            <a class="active" href="https://localhost:7044/Payroll/payrollHome" >Home</a>
+            <span>|</span>
+            <a href="https://localhost:7044/Payroll/AboutUs">AboutUs</a>
+            <span>|</span>
+            <a href="https://localhost:7044/Payroll/ContactUs">ContactUs</a>
+            <span>|</span>
+            <a href="https://localhost:7044/payroll/payrollLogIn">Log In</a>
+        </div>
+    </header>
+   @*  <nav id="navbar-top" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Payroll Module</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li>
+                    <a class="nav-link active" href="https://localhost:7044/Payroll/payrollHome">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/AboutUs">AboutUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/ContactUs">ContactUs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/payroll/payrollLogIn">Log In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+ *@
+    <div class="card bg-dark text-white">
+        <img src="~/content/image/payroll_in_india_featureimage_02.png" class="card-img" alt="...">
+        <div class="card-img-overlay">
+           @*  <div class="button-container">
+                <button type="button" id="admin-btn" class="btn btn-success btn-lg">Admin</button>
+                <button type="button" id="employee-btn" class="btn btn-dark btn-lg">Employee</button>
+            </div> *@
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 Payroll Module Pvt.ltd. All Rights Reserved.
+    </footer>
+    <script>
+        $('#admin-btn').click(function () {
+            window.location.href = 'https://localhost:7044/payroll/payrollLogIn';
+        });
+        // $('#employee-btn').click(function () {
+        //     window.location.href = 'https://localhost:7044/Payroll/PayrollEmployeeLogin';
+        // });
+    </script>
+
+</body>
+</html>

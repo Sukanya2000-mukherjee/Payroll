@@ -1,0 +1,200 @@
+﻿
+@{
+    ViewData["Title"] = "EditEmpAttendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attendance Page</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Employee Attendance Page</h1>
+        </header>
+        <nav id="navbar-top" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Payroll Module</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li>
+                        <a class="nav-link " href="https://localhost:7044/Payroll/AdminHomePage">Back to Service</a>
+                    </li>
+                    <li>
+                        <a class="nav-link " href="https://localhost:7044/Payroll/EmployeeAttendanceSummary">Back to Summary</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="https://localhost:7044/Payroll/payrollHome">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:7044/Payroll/AboutUs">AboutUs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://localhost:7044/Payroll/ContactUs">ContactUs</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section>
+            
+
+                <div class="form-group">
+                    <label for="employeeName">Employee Name:</label>
+                    <input type="text" class="form-control" id="employeeName" name="employeeName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeId">Employee ID:</label>
+                    <input type="text" class="form-control" id="employeeId" name="employeeId" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="month">Month</label>
+                    @* <input type="text" class="form-control" id="monthselector" name="month" required> *@
+                    <select class="form-control" id="monthselector" name="month" required>
+                        <option value="" disabled selected>Select month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="totalDays">Total Days:</label>
+                    <input type="number" class="form-control" id="totalDays" name="totalDays" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="workingDays">Working Days:</label>
+                    <input type="number" class="form-control" id="workingDays" name="workingDays" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="presentDays">Present Days:</label>
+                    <input type="number" class="form-control" id="presentDays" name="presentDays" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="leaveDays">Leave Days:</label>
+                    <input type="number" class="form-control" id="leaveDays" name="leaveDays" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="holidays">Holidays:</label>
+                    <input type="number" class="form-control" id="holidays" name="holidays" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="weeklyOffDays">Weekly Off Days:</label>
+                    <input type="number" class="form-control" id="weeklyOffDays" name="weeklyOffDays" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="earlyGoingDays">Early Going Days:</label>
+                    <input type="number" class="form-control" id="earlyGoingDays" name="earlyGoingDays" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lateComingDays">Late Coming Days:</label>
+                    <input type="number" class="form-control" id="lateComingDays" name="lateComingDays" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="absentDays">Absent Days:</label>
+                    <input type="number" class="form-control" id="absentDays" name="absentDays" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="payableDays">Payable Days:</label>
+                    <input type="number" class="form-control" id="payableDays" name="payableDays" required>
+                </div>
+
+                
+
+            <div class="col-12">
+                <div class="input-group input-group-sm">
+                    <label for="attachment">Attached File:</label>
+
+                    <input id="editattachment" type="file" class="form-control w-75" style="line-height: 15px;" name="">
+                    <span id="file-path" class="form-control w-75" style="line-height: 15px;"></span>
+
+                    <span class="error-message" id="file-error"></span>
+
+                </div>
+            </div>
+               
+            
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+<script src="\content\js\payroll\editempattendancescript.js"></script>

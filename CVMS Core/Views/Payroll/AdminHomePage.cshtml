@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewData["Title"] = "AdminHomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Admin Dashboard</h1>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AdminHomepage</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+
+
+       
+
+        .navbar {
+            background-color: #333;
+            margin-bottom: 20px;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn-group {
+            margin-bottom: 20px;
+        }
+
+        
+
+       
+    </style>
+</head>
+<body>
+    <nav id="navbar-top" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Payroll Module</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="https://localhost:7044/Payroll/AdminHomePage">Admin Service</a>
+                </li>
+                
+                <li>
+                    <a class="nav-link" href="https://localhost:7044/Payroll/payrollHome">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/AboutUs">AboutUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/ContactUs">ContactUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/payrollHome">Log Out</a>
+                </li>
+
+               
+            </ul>
+        </div>
+    </nav>
+
+   
+   
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><h3>Welcome  <span id="cuname">@ViewBag.LoggedInName</span></h3></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+               @*  <li class="navbar-brand" style="margin-left: 20px;">
+                    <h3>Welcome  <span id="cuname">@ViewBag.LoggedInName</span></h3>
+
+                </li> *@
+    
+        @* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> *@
+
+        
+               
+               @*  <li class="nav-item">
+                    <a class="nav-link" id="allowance-tag" href="#">Allowance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="deduction-tag"href="#">Deduction</a>
+                </li> *@
+                <li class="nav-item">
+                    <a class="nav-link" id="empdtl-tag"href="#">Employee Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="empattendance-tag"href="#">Attendance Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="empleave-tag" href="#">Employee Leave Request Page </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="card bg-dark text-white">
+        <img src="~/content/image/payroll img2.jpeg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+            
+   
+    </div>
+        
+    </div>
+
+    
+    
+        
+    <!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // $('#allowance-tag').click(function () {
+        //     window.location.href = 'https://localhost:7044/payroll/AllowanceMaster';
+        // });
+        // $('#deduction-tag').click(function () {
+        //     window.location.href = 'https://localhost:7044/payroll/DeductionMaster';
+        // });
+
+        $('#empdtl-tag').click(function () {
+            window.location.href = 'https://localhost:7044/payroll/EmployeeDetailSummary';
+        });
+
+        $('#empattendance-tag').click(function () {
+            window.location.href = 'https://localhost:7044/Payroll/EmployeeAttendanceSummary';
+        });
+        $('#empleave-tag').click(function () {
+            window.location.href = 'https://localhost:7044/Payroll/LeaveDetailSummary';
+        });
+    </script>
+</body>
+</html>

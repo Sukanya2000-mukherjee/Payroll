@@ -1,0 +1,316 @@
+﻿
+@{
+    ViewData["Title"] = "EmployeeDetailMaster";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/example-styles.css">
+    <link rel="stylesheet" type="text/css" href="css/demo-styles.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Employee Detail Page</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+       
+
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button{
+            text-align: center;
+        }
+       
+       
+    </style>
+</head>
+
+<body>
+    <nav id="navbar-top" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Payroll Module</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/AdminHomePage">Back to Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/EmployeeDetailSummary">Back to Summary</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="https://localhost:7044/Payroll/payrollHome">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/AboutUs">AboutUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/ContactUs">ContactUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://localhost:7044/Payroll/payrollHome">Log Out</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <header>
+            <h1>Employee Details Page</h1>
+        </header>
+              <section class="row">
+        <div class ="col-md-6">
+
+        <h2 class="mt-3 mb-4"><b>Personal Details:</b></h2>
+
+        <div class="form-group">
+          <label for="employeeName">Employee Name:</label>
+          <input type="text" class="form-control" id="employeeName" name="employeeName" required>
+        </div>
+                <div id="errorMessageforname"></div>
+
+        <div class="form-group">
+          <label for="employeeId">Employee ID:</label>
+          <input type="text" class="form-control" id="employeeId" name="employeeId" required>
+                </div>
+                <div id="errorMessageId"></div>
+
+        <div class="form-group">
+        <label for="dateOfBirth">Date of Birth:</label>
+        <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+                </div><div id="errorMessagedob"></div>
+
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select class="form-control" id="gender" name="gender" required>
+            <option value="" disabled selected>Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+                </div><div id="errorgender"></div>
+
+          <div class="form-group">
+            <label for="contact">Contact No:</label>
+            <input type="text" class="form-control" id="contact" name="contact" required>
+                </div><div id="errorContact"></div>
+
+           <div class="form-group">
+                    <label class="label-dflt">Personal Email</label>
+                    <input id="PersonalEmail" type="email" name="" placeholder="Personal Email" class="form-control" required>
+                </div><div id="errorpersonalemail"></div>
+
+          <div class="form-group">
+            <label for="address">Address:</label>
+             <textarea class="form-control" id="address" name="address" required></textarea>
+                </div><div id="erroraddress"></div>
+
+       </div>
+
+
+
+      <div class="col-md-6">
+
+         <h2 class="mt-3 mb-4"><b>Account Details:</b></h2>
+
+          <div class="form-group">
+             <label for="employeeUsername">Employee Username:</label>
+             <input type="text" class="form-control" id="employeeUsername" name="employeeUsername" required>
+                </div><div id="errorusername"></div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="passwordSelector" name="password" required>
+                </div><div id="errorpassword"></div>
+
+        <h2 class="mt-3 mb-4"><b>Company Details:</b></h2>
+
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input type="text" class="form-control" id="departmentSelector" name="department" required>
+                </div><div id="errordepartment"></div>
+
+            <div class="form-group">
+              <label for="designation">Designation:</label>
+              <input type="text" class="form-control" id="designationSelector" name="designation" required>
+                </div><div id="errordesignation"></div>
+
+                <div class="form-group">
+                    <label class="label-dflt">Official Email Address</label>
+                    <input id="OfficialEmailSelector" type="email" name="" placeholder="Official Email" class="form-control" required>
+                </div><div id="errorofficialemail"></div>
+
+            <div class="form-group">
+               <label for="dateOfJoining">Date of Joining:</label>
+              <input type="date" class="form-control" id="dateOfJoiningSelector" name="dateOfJoining" required>
+                </div><div id="errordoj"></div>
+      </div>
+
+
+
+
+
+
+        <div class="col-md-6">
+
+         <h2 class="mt-3 mb-4"><b>Financial Details:</b></h2>
+
+           <div class="form-group">
+               <label for="basicSalary">Basic Salary:</label>
+               <input type="number" class="form-control" id="basicSalary" name="basicSalary" required>
+           </div><div id="errorbasicsalary"></div>
+
+          <div class="form-group">
+             <label for="allowance">Allowance Name:</label>
+                    <select class="form-control" id="allowancename" name="allowanceName" required>
+                    <option value="" disabled selected>Select Allowance</option>
+                  
+                    </select>
+                </div><div id="errorallowname"></div>
+
+          <div class="form-group">
+            <label for="allowance">Allowance Amount:</label>
+                    <input type="text" class="form-control" id="allowanceamount" name="allowanceAmount" required>
+
+                </div><div id="errorallowamount"></div>
+
+           <div class="form-group">
+              <label for="deduction">Deduction Name:</label>
+                    <select class="form-control" id="deductionname" name="deductionName" required>
+                        <option value="" disabled selected>Select Deduction</option>
+                        </select>
+                </div><div id="errordeductname"></div>
+
+             <div class="form-group">
+
+                 <label for="deduction">Deduction Amount:</label>
+                 <input type="text" class="form-control" id="deductionamount" name="deductionAmount" required>
+
+                </div><div id="errordeductamount"></div>
+
+            <div class="form-group">
+               <label for="totalSalary">Total Salary:</label>
+               <input type="number" class="form-control" id="totalSalary" name="totalSalary" required>
+                </div><div id="errortotalsalary"></div>
+
+        </div>
+
+
+
+
+       <div class="col-md-6">
+
+          <h2 class="mt-3 mb-4"><b>Bank Details:</b></h2>
+
+         <div class="form-group">
+           <label for="accountHolderName">Account Holder Name:</label>
+           <input type="text" class="form-control" id="accountHolderNameSelector" name="accountHolderName" required>
+                </div><div id="erroraccountholdername"></div>
+
+          <div class="form-group">
+           <label for="accountNumber">Account Number:</label>
+           <input type="text" class="form-control" id="accountNumberSelector" name="accountNumber" required>
+                </div><div id="erroracnumber"></div>
+
+         <div class="form-group">
+          <label for="bankName">Bank Name:</label>
+         
+                    <select class="form-control" id="bankNameSelector" name="bankName" required>
+                        <option value="" disabled selected>Select Bank</option>
+                        <option value="state Bank of India">State Bank of India</option>
+                        <option value="central Bank of India">Central Bank of India</option>
+                        <option value="punjab National Bank of India">Punjab National Bank of India</option>
+                        <option value="ICICI Bank">ICICI Bank</option>
+                        <option value="HDFC Bank">HDFC Bank</option>
+                    </select>
+                </div><div id="errorbankname"></div>
+
+          <div class="form-group">
+            <label for="branch">Branch:</label>
+            
+                    <select class="form-control" id="branchSelector" name="branch" required>
+                        <option value="" disabled selected>Select Branch</option>
+                        <option value="Khardha">Khardha</option>
+                        <option value="Barrackpore">Barrackpore</option>
+                        <option value="Garia">Garia</option>
+                        <option value="Kaikhali">Kaikhali</option>
+                        <option value="Behala">Behala</option>
+                    </select>
+
+                </div><div id="errorbranch"></div>
+
+
+
+
+       </div>
+
+      </section>
+
+        <div class="text-center">
+            <button type="submit" id="btnsave" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+    
+    
+    
+
+
+
+    
+</body>
+
+</html>
+
+<script src="\content\js\payroll\employeedetailmasterscript.js"></script>
+
+
+
+
+
+
+
+
+
+
+
