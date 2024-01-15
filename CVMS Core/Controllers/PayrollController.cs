@@ -672,8 +672,11 @@ namespace CVMS_Core.Controllers
 
 
 
-
-
+//-------------------------------------------------------------------
+ public IActionResult demoview()
+        {
+            return View();
+        }
 
     }
 }
