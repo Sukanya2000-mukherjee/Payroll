@@ -678,6 +678,11 @@ namespace CVMS_Core.Controllers
             return View();
         }
 
+        public IActionResult demoviewanother()
+        {
+            return View();
+        }
+
     }
 }
 
